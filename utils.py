@@ -2,6 +2,7 @@ from PIL import Image
 from streamlit import cache_data
 from random import randint
 import time
+from functools import cache
 
 DECADES = [f"{i}s" for i in range(1930, 2020, 10)]
 GENRES = [
@@ -33,30 +34,30 @@ SAMPLE_MOVIES = {
 }
 
 
-@cache_data
+@cache
 def load_image(img):
     image = Image.open("img/" + img)
     return image
 
-@cache_data
+@cache
 def round_decade(year):
     return int(round(year, -1))
 
-@cache_data(show_spinner=False)
+@cache
 def estimate_title_and_actors(image):
     time.sleep(randint(10, 15))
     title = SAMPLE_MOVIES[image]['title']
     actors = SAMPLE_MOVIES[image]['actors']
     return title, actors
 
-@cache_data(show_spinner=False)
+@cache
 def estimate_decade_and_genres(image):
     time.sleep(randint(3, 7))
     decade = SAMPLE_MOVIES[image]['decade']
     genres = SAMPLE_MOVIES[image]['genre']
     return decade, genres
 
-@cache_data(show_spinner=False)
+@cache
 def generate_image(image):
     time.sleep(randint(15, 30))
     return load_image(SAMPLE_MOVIES[image]['generated'])
