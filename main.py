@@ -113,8 +113,8 @@ st.subheader("", divider='rainbow')
 
 footer_columns = st.columns(3)
 with footer_columns[0]:
-    st.image("tt12986254.jpg")
+    st.image("img/tt12986254.jpg")
 with footer_columns[1]:
-    st.image("tt14074150.jpg")
+    st.image("img/tt14074150.jpg")
 with footer_columns[2]:
-    st.image("tt14308636.jpg")
+    st.image("img/tt14308636.jpg")

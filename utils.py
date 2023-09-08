@@ -21,24 +21,21 @@ SAMPLE_MOVIES = {
         'actors': ['Simon Pegg', 'Lake Bell'],
         'decade': 2010,
         'genre': 'Comedy',
-        'generated': 'imdb_tt164736_final'
+        'generated': 'imdb_tt164736_final.png'
     },
-    'second': {
-        
+    'tt1234258.png': {
+        'title': 'Hounded',
+        'actors': ['Samantha Bond', 'Nick Moran', 'James Faulkner', 'Larry Lamb'],
+        'decade': 2000,
+        'genre': 'Thriller',
+        'generated': 'imdb_tt1234_final.png'
     }
 }
-
-ACTORS = {
-    'some': ''
-}
-
-
 
 
 @cache_data
 def load_image(img):
     image = Image.open("img/" + img)
-    print('loading image')
     return image
 
 @cache_data
